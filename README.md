@@ -105,6 +105,9 @@ customer_support_env/
 ├── client.py             # OpenEnv WebSocket client
 ├── models.py             # Pydantic Action & Observation models
 ├── openenv.yaml          # OpenEnv spec config
+├── pyproject.toml        # Environment packaging spec
+├── uv.lock               # Dependency lock file
+├── validate-submission.sh # Validation script
 ├── Dockerfile            # Container definition
 ├── server/
 │   ├── app.py            # FastAPI app wrapping the environment

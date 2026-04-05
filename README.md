@@ -1,3 +1,13 @@
+---
+title: Customer Support Triage
+emoji: 🎧
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # Customer Support Triage Environment
 
 A real-world OpenEnv environment for the OpenEnv Hackathon. It simulates a Customer Support Triage system where an AI agent reads inbound support tickets and decides how to handle each one correctly.

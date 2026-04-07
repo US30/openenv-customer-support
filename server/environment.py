@@ -70,7 +70,7 @@ class CustomerSupportEnvironment(Environment):
         self._load_tickets()
         self.current_ticket_index = 0
         
-        return self._make_observation(reward=0.0, done=False)
+        return self._make_observation(reward=0.01, done=False)
 
     def _make_observation(self, reward: float = 0.0, done: bool = False) -> CustomerSupportObservation:
         t = self._get_active_ticket()
@@ -94,7 +94,7 @@ class CustomerSupportEnvironment(Environment):
         t = self._get_active_ticket()
         
         if not t:
-            return self._make_observation(reward=0.0, done=True)
+            return self._make_observation(reward=0.05, done=True)
             
         action_type = action.action_type.lower()
         ttype = t["type"]
@@ -123,10 +123,10 @@ class CustomerSupportEnvironment(Environment):
                 is_correct = True
 
         if is_correct:
-            reward = 1.0 # Standard positive reward mapped properly per ticket
+            reward = 0.95  # High reward but strictly < 1.0 per hackathon spec
             t["status"] = "resolved"
         else:
-            reward = 0.0 # Strict zero for incorrect routing
+            reward = 0.05  # Low reward but strictly > 0.0 per hackathon spec
             t["status"] = "failed"
 
         self.current_ticket_index += 1

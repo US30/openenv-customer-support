@@ -91,11 +91,11 @@ Tested with `gpt-4o-mini` via `api.openai.com/v1`:
 
 | Task | Steps | Score |
 |---|---|---|
-| task1 | 1 | 1.000 |
-| task2 | 3 | 1.000 |
-| task3 | 5 | 1.000 |
+| task1 | 1 | 0.950 |
+| task2 | 3 | 0.950 |
+| task3 | 5 | 0.950 |
 
-The environment is fully deterministic with unambiguous grading — the correct action for every ticket type is uniquely defined, making it suitable for reproducible RL benchmarking.
+The environment is fully deterministic with unambiguous grading — the correct action for every ticket type is uniquely defined. Scores are strictly within (0, 1) as required by the OpenEnv spec.
 
 ## Project Structure
 

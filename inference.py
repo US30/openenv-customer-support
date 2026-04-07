@@ -148,12 +148,12 @@ async def run_task(task_name: str):
                 
         MAX_TOTAL_REWARD = max(float(len(obs.tickets_summary)), 1.0)
         score = sum(rewards) / MAX_TOTAL_REWARD
-        score = min(max(score, 0.0), 1.0)
+        score = min(max(score, 0.01), 0.99)  # Strictly within (0, 1) per hackathon spec
         success = score >= SUCCESS_SCORE_THRESHOLD
 
     except Exception as e:
         print(f"[DEBUG] Error during run: {e}")
-        score = 0.0
+        score = 0.01  # Strictly > 0.0 per hackathon spec
         success = False
     finally:
         try:
